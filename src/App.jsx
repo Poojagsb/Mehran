@@ -2,6 +2,9 @@ import { useState } from 'react'
 import logo from "./assets/Images/Asset1.png"
 import logonobg from "./assets/Images/logonobg.png"
 import herobg from "./assets/Images/chickenbg.jpg"
+import { FaGooglePlay,FaApple } from 'react-icons/fa';
+import { IconContext } from "react-icons";
+import { BiArrowFromBottom } from 'react-icons/bi'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,8 +28,8 @@ function App() {
           </nav>
         </div >
       </div >
-      <section class="flex flex-col min-h-screen bg-center text-white bg-cover bg-blend-overlay bg-fixed bg-black/30" style={{ backgroundImage: `url(${herobg})` }}>
-        <div class=" flex-1 flex items-center">
+      <section class="flex flex-col min-h-screen bg-center text-white bg-cover bg-blend-overlay bg-fixed bg-black/50" style={{ backgroundImage: `url(${herobg})` }}>
+        <div class=" flex-1 flex items-center ">
           {/* Hero Content */}
           <div div class="text-center mx-auto">
             <h1 class="text-4xl font-semibold">Welcome</h1>
@@ -36,6 +39,17 @@ function App() {
             <div class="justify-center items-center flex h-50 w-full">
               <img src={logonobg} />
             </div>
+            <br />
+            <IconContext.Provider value={{ color: "yellow", className: "gplay-logo", size:"2em", style:{cursor:'pointer'} }}>
+              <div class="justify-center flex gap-8 ">
+                <FaGooglePlay /><FaApple />
+              </div>
+              <br/>
+              <div class="flex justify-center font-bold">
+              Get the App
+              </div>
+            </IconContext.Provider>
+            
           </div>
         </div>
       </section>
